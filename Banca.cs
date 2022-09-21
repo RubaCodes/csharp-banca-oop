@@ -38,4 +38,9 @@ public class Banca {
         }
         return risultatoRicerca;
     }
+
+    //Metodi prestiti
+    public void NewPrestito(Prestiti prestito) {
+        prestiti.Add(prestito);
+    }
 }

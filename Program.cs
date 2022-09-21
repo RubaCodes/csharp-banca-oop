@@ -24,4 +24,6 @@ else {
         Console.WriteLine(el.CodiceFiscale);
     }
 }
-
+//test nuovo prestito
+Prestiti nuovoPrestito = new Prestiti(secondoCliente,12000,1000);
+banca.NewPrestito(nuovoPrestito);
