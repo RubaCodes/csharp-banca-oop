@@ -13,6 +13,7 @@ banca.EditCliente(secondoCliente, "Gianluca", "Gianfranchi", 22000);
 
 
 //test ricerca cliente : nome e cognome
+Console.WriteLine("----Test ricerca singolo utente per nome e cognome----");
 List<Clienti> risultatoRicerca = banca.SearchCliente("Gianluca", "Gianfranchi");
 if (risultatoRicerca.Count == 0)
 {
@@ -25,11 +26,15 @@ else {
     }
 }
 //test nuovo prestito
-Prestiti nuovoPrestito = new Prestiti(secondoCliente,12000,1000);
-banca.NewPrestito(nuovoPrestito);
+Prestiti prestitoUno = new Prestiti(secondoCliente,12000,1000);
+Prestiti prestitoDue = new Prestiti(secondoCliente, 10000, 1000);
+
+banca.NewPrestito(prestitoUno);
+banca.NewPrestito(prestitoDue);
+
 //test ricerche prestiti partendo da codice fiscale //
 //funziona , ritorna il 12k partendo dal cf del secondoUtente
-
+Console.WriteLine("----Test lista prestiti singolo utente----");
 List<Prestiti> risultatiPrestiti =  banca.SearchPrestitiByCodiceFiscale("GNLCGNFRNCH");
 if (risultatiPrestiti.Count == 0)
 {
@@ -42,3 +47,7 @@ else
         Console.WriteLine(elm.Ammontare);  
     }
 }
+
+//test somma prestiti
+Console.WriteLine("----Test somma prestiti singolo utente----");
+Console.WriteLine(banca.GetTotalePrestiti("GNLCGNFRNCH"));

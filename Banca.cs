@@ -52,4 +52,12 @@ public class Banca {
         }
         return risultati;
     }
+    public int GetTotalePrestiti(string codiceFiscale) {
+        List<Prestiti> listaPrestiti = SearchPrestitiByCodiceFiscale (codiceFiscale);
+        int sommaPrestiti = 0;
+        foreach (Prestiti prestito in listaPrestiti) {
+            sommaPrestiti += prestito.Ammontare;
+        }
+        return sommaPrestiti;
+    }
 }
