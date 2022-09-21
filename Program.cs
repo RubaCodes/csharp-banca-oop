@@ -26,8 +26,12 @@ else {
     }
 }
 //test nuovo prestito
-Prestiti prestitoUno = new Prestiti(secondoCliente,12000,1000);
-Prestiti prestitoDue = new Prestiti(secondoCliente, 10000, 1000);
+Prestiti prestitoUno = new Prestiti(secondoCliente,12000);
+Prestiti prestitoDue = new Prestiti(secondoCliente, 10000);
+//log per check sul calcolo rata
+Console.WriteLine(prestitoDue.Rata);
+Console.WriteLine(prestitoUno.Rata);
+
 
 banca.NewPrestito(prestitoUno);
 banca.NewPrestito(prestitoDue);
