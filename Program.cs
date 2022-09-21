@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//inizializzazione banca
+Banca banca = new Banca("Mega Banca Mondiale");
+
+//banca.Nome;
+Console.WriteLine(banca.Nome);
