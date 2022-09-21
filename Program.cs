@@ -65,3 +65,10 @@ Console.WriteLine();
 //test somma prestiti
 Console.WriteLine("----Test somma prestiti singolo utente----");
 Console.WriteLine(banca.GetTotalePrestiti("GNLCGNFRNCH"));
+int[] rateRimanenti = banca.GetRateRimanenti("GNLCGNFRNCH");
+
+foreach (int rate in rateRimanenti) {
+
+    Console.WriteLine(rate);
+
+}

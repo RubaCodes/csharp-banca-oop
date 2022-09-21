@@ -60,4 +60,15 @@ public class Banca {
         }
         return sommaPrestiti;
     }
+    public int[] GetRateRimanenti(string codiceFiscale) {
+        List<Prestiti> listaPrestiti = SearchPrestitiByCodiceFiscale(codiceFiscale);
+        int[] rateRimanenti = new int[listaPrestiti.Count];
+        int index = 0;
+        foreach (Prestiti prestito in listaPrestiti)
+        {
+            rateRimanenti[index] = (int) (prestito.dataFine.DayNumber - DateOnly.FromDateTime(DateTime.Now).DayNumber)/30;
+            index++;
+        }
+        return rateRimanenti;
+    }
 }
