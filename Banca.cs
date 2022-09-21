@@ -7,6 +7,8 @@ public class Banca {
     //lista prestiti
     List<Prestiti> prestiti;
 
+
+    //METODI CLIENTI
     public Banca(string nome) {
         Nome = nome;
         clienti = new List<Clienti>();
@@ -22,10 +24,18 @@ public class Banca {
         cliente.Nome = newNome;
         cliente.Cognome = NewCognome;
         cliente.Stipendio = newStipendio;
+        cliente.CodiceFiscale = cliente.GeneraCodiceFiscale();
     }
-    //ricerca cliente
-    public Clienti SearchCliente(Clienti cliente) {
-
-        return cliente;
+    //ricerca cliente : per nome e cognome
+    public List<Clienti> SearchCliente(string nome, string cognome) {
+        List<Clienti> risultatoRicerca = new List<Clienti>();
+        //ritorna lista di clienti con quel nome e cognome
+        foreach (Clienti cliente in clienti)
+        {
+            if (cliente.Nome.ToLower()+cliente.Cognome.ToLower() == nome.ToLower()+cognome.ToLower()) {
+                risultatoRicerca.Add(cliente);
+            }
+        }
+        return risultatoRicerca;
     }
 }

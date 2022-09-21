@@ -7,11 +7,26 @@ public class Clienti {
 
     public Clienti(string nome, string cognome) {
         Nome = nome;
-        Cognome = cognome;  
+        Cognome = cognome;
+        CodiceFiscale = GeneraCodiceFiscale();
     }
 
-    //private string GeneraCodiceFiscale() {
-    //    string codiceFiscale;
-        
-    //}
+    public string GeneraCodiceFiscale()
+    {
+        //codice fiscale seplificato, solo consonanti
+        string codiceFiscale ="";
+        for (int i = 0; i < Nome.Length; i++) {
+            if (Nome[i] != 'a' && Nome[i] != 'e' && Nome[i] != 'i' && Nome[i] != 'o' && Nome[i] != 'u') {
+                codiceFiscale += Nome[i];
+            }
+        }
+        for (int i = 0; i < Cognome.Length; i++)
+        {
+            if (Cognome[i] != 'a' && Cognome[i] != 'e' && Cognome[i] != 'i' && Cognome[i] != 'o' && Cognome[i] != 'u')
+            {
+                codiceFiscale += Cognome[i];
+            }
+        }
+        return codiceFiscale.ToUpper();
+    }
 }
