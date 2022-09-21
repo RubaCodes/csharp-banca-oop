@@ -33,9 +33,10 @@ Prestiti prestitoUno = new Prestiti(secondoCliente,12000);
 Prestiti prestitoDue = new Prestiti(secondoCliente, 10000);
 //log per check sul calcolo rata
 Console.WriteLine();
-Console.WriteLine("----Test log costo rata----");
-Console.WriteLine(prestitoDue.Rata);
-Console.WriteLine(prestitoUno.Rata);
+Console.WriteLine("----Test log costo prestiti----");
+prestitoDue.GetPrestitoInfo();
+prestitoUno.GetPrestitoInfo();
+
 
 
 

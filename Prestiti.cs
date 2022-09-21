@@ -17,7 +17,16 @@ public class Prestiti {
         //calcolo rata su un anno;
         Rata = Math.Round((decimal) ammontare / 12 ,2);
         //data di inizio e fine seetata di dafault ad un anno per sempliocita
-        dataInizio = new DateOnly();
-        dataFine = new DateOnly().AddYears(1);
+        dataInizio = DateOnly.FromDateTime(DateTime.Now);
+        dataFine = DateOnly.FromDateTime(DateTime.Now).AddYears(1);
+    }
+    public void GetPrestitoInfo()
+    {
+        Console.WriteLine("---- riassunto prestito----");
+        Console.WriteLine($"ID: {Id}");
+        Console.WriteLine($"Ammontare: {Ammontare}");
+        Console.WriteLine($"Codice Fiscale titolare: {cliente.CodiceFiscale}");
+        Console.WriteLine($"Data di Inizio: {dataInizio}");
+        Console.WriteLine($"Data di Fine: {dataFine}");
     }
 }
