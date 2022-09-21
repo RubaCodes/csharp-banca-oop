@@ -10,6 +10,13 @@ public class Clienti {
         Cognome = cognome;
         CodiceFiscale = GeneraCodiceFiscale();
     }
+    public void GetUserInfo() {
+        Console.WriteLine("---- riassunto utente----");
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Cognome: {Cognome}");
+        Console.WriteLine($"Codice Fiscale: {CodiceFiscale}");
+        Console.WriteLine($"Stipendio: {Stipendio}$");
+    }
 
     public string GeneraCodiceFiscale()
     {

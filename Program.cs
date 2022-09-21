@@ -11,9 +11,12 @@ banca.AddCliente(secondoCliente);
 //test modifica cliente
 banca.EditCliente(secondoCliente, "Gianluca", "Gianfranchi", 22000);
 
-
+Console.WriteLine("----Test Log info singolo utente----");
+primoCliente.GetUserInfo();
+Console.WriteLine();
+secondoCliente.GetUserInfo();
 //test ricerca cliente : nome e cognome
-Console.WriteLine("----Test ricerca singolo utente per nome e cognome----");
+Console.WriteLine( '\n' +"----Test ricerca singolo utente per nome e cognome----");
 List<Clienti> risultatoRicerca = banca.SearchCliente("Gianluca", "Gianfranchi");
 if (risultatoRicerca.Count == 0)
 {
@@ -29,8 +32,12 @@ else {
 Prestiti prestitoUno = new Prestiti(secondoCliente,12000);
 Prestiti prestitoDue = new Prestiti(secondoCliente, 10000);
 //log per check sul calcolo rata
+Console.WriteLine();
+Console.WriteLine("----Test log costo rata----");
 Console.WriteLine(prestitoDue.Rata);
 Console.WriteLine(prestitoUno.Rata);
+
+
 
 
 banca.NewPrestito(prestitoUno);
@@ -51,6 +58,8 @@ else
         Console.WriteLine(elm.Ammontare);  
     }
 }
+
+Console.WriteLine();
 
 //test somma prestiti
 Console.WriteLine("----Test somma prestiti singolo utente----");
