@@ -43,4 +43,13 @@ public class Banca {
     public void NewPrestito(Prestiti prestito) {
         prestiti.Add(prestito);
     }
+    public List<Prestiti> SearchPrestitiByCodiceFiscale(string codiceFiscale) {
+        List<Prestiti> risultati = new List<Prestiti>();
+        foreach (Prestiti el in prestiti) {
+            if (el.cliente.CodiceFiscale == codiceFiscale) {
+                risultati.Add(el);
+            }
+        }
+        return risultati;
+    }
 }

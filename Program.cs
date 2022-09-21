@@ -27,3 +27,18 @@ else {
 //test nuovo prestito
 Prestiti nuovoPrestito = new Prestiti(secondoCliente,12000,1000);
 banca.NewPrestito(nuovoPrestito);
+//test ricerche prestiti partendo da codice fiscale //
+//funziona , ritorna il 12k partendo dal cf del secondoUtente
+
+List<Prestiti> risultatiPrestiti =  banca.SearchPrestitiByCodiceFiscale("GNLCGNFRNCH");
+if (risultatiPrestiti.Count == 0)
+{
+    Console.WriteLine("Spiacente, non risulta nessun prestito con quel codice fiscale");
+}
+else
+{
+    foreach (Prestiti elm in risultatiPrestiti)
+    {
+        Console.WriteLine(elm.Ammontare);  
+    }
+}
